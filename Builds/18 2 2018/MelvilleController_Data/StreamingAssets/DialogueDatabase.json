@@ -1,0 +1,50 @@
+[
+	[ 
+		{
+			"CharacterName": "Diamond",
+			"DialogueText": "Guess who?"
+		},
+		{
+			"CharacterName": "Barry",
+			"DialogueText": "Emhyr of course."
+		},
+		{
+			"CharacterName": "Diamond",
+			"DialogueText": "Oh yeah. The compression makes it look shit."
+		},
+		{
+			"CharacterName": "Barry",
+			"DialogueText": "Phone quality also isnt 100%."
+		},
+		{
+			"CharacterName": "Diamond",
+			"DialogueText": "The beard is fucked."
+		},
+		{
+			"CharacterName": "Barry",
+			"DialogueText": "Does he even have a beard?"
+		},
+		{
+			"CharacterName": "Diamond",
+			"DialogueText": "Yeah..."
+		},
+		{
+			"CharacterName": "Diamond",
+			"DialogueText": "Ya like jazz?"
+		},
+		{
+			"CharacterName": "Barry",
+			"DialogueText": "Much doge."
+		}
+	],
+  [
+    {
+      "CharacterName": "Coon",
+      "DialogueText": "Welcome"
+    },
+    {
+      "CharacterName": "CXZ",
+      "DialogueText": "Very"
+    }
+  ]
+]

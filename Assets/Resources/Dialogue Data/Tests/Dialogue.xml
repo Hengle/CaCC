@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<DialogueSequence>
+
+  <Dialogue>
+    <CharacterName>John</CharacterName>
+    <DialogueText>Hello there!</DialogueText>
+  </Dialogue>
+
+  <Dialogue>
+    <CharacterName>Amelia</CharacterName>
+    <DialogueText>Hello John</DialogueText>
+  </Dialogue>
+
+  <Dialogue>
+    <CharacterName>John</CharacterName>
+    <DialogueText>Isn't the weather nice today?</DialogueText>
+  </Dialogue>
+
+  <Dialogue>
+    <CharacterName>Amelia</CharacterName>
+    <DialogueText>No I hate rainbows and sunshine</DialogueText>
+  </Dialogue>
+
+  <Dialogue>
+    <CharacterName>John</CharacterName>
+    <DialogueText>I'm not interested</DialogueText>
+  </Dialogue>
+
+</DialogueSequence>
+
+ 
+
+

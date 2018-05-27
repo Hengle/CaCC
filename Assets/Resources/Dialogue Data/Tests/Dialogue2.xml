@@ -1,0 +1,13 @@
+<DialogueSequence>
+  
+  <Dialogue>
+    <CharacterName>Name1</CharacterName>
+    <DialogueText>Hello</DialogueText>
+  </Dialogue>
+  
+  <Dialogue>
+    <CharacterName>Name2</CharacterName>
+    <DialogueText>Hi</DialogueText>
+  </Dialogue>
+  
+</DialogueSequence>
