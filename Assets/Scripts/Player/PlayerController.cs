@@ -34,23 +34,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (ManagerScripts.instance.timeManager.GameState == TimeManager.GameTimeState.Talking)
+        /*if (ManagerScripts.instance.timeManager.GameState == TimeManager.GameTimeState.Talking)
         {
             animator.SetFloat("speedPercent", 0, speedSmoothTime, Time.deltaTime);
             return;
-        }
-        // input
+        }*/
+        // Input
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
         bool running = Input.GetKey(KeyCode.LeftShift);
 
         Move(inputDir, running);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
-        // animator
+        // Animator
         float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
         animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
 
@@ -78,15 +74,6 @@ public class PlayerController : MonoBehaviour
             velocityY = 0;
         }
 
-    }
-
-    void Jump()
-    {
-        if (controller.isGrounded)
-        {
-            float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
-            velocityY = jumpVelocity;
-        }
     }
 
     float GetModifiedSmoothTime(float smoothTime)

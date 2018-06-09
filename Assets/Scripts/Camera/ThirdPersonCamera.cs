@@ -23,10 +23,10 @@ public class ThirdPersonCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        if (ManagerScripts.instance.timeManager.GameState == TimeManager.GameTimeState.Talking || ManagerScripts.instance.timeManager.GameState == TimeManager.GameTimeState.Pause)
+        /*if (ManagerScripts.instance.timeManager.GameState == TimeManager.GameTimeState.Talking || ManagerScripts.instance.timeManager.GameState == TimeManager.GameTimeState.Pause)
         {
             return;
-        }
+        }*/
         yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
         pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);

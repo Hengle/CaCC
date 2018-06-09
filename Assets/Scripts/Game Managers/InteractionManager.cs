@@ -5,20 +5,47 @@ using UnityEngine.UI;
 
 public class InteractionManager : MonoBehaviour {
 
-    public GameObject interactionOverlay;
+    #region Singleton
+    public static InteractionManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+    #endregion
 
-    private Interactable[] allInteractables;
+    private List<Interactable> allInteractables;
     private List<Interactable> inRangeObjects = new List<Interactable>();
 
     private Interactable currentSelected;
 
     private void Start()
     {
-        allInteractables = GameObject.FindObjectsOfType<Interactable>();
+        allInteractables = new List<Interactable>();
+    }
+
+    private void OnEnable()
+    {
+
+    }
+
+    public void AddToInteractables(Interactable interactable)
+    {
+        allInteractables.Add(interactable);
+    }
+
+    public void RemoveFromInteractables(Interactable interactable)
+    {
+        allInteractables.Remove(interactable);
     }
 
     private void Update()
     {
+        if (GlobalVar.instance.GameState != GlobalVar.State.Roaming)
+        {
+            return;
+        }
+
         inRangeObjects.Clear();
 
         foreach (Interactable i in allInteractables)
@@ -31,13 +58,13 @@ public class InteractionManager : MonoBehaviour {
 
         if (inRangeObjects.Count == 0)
         {
-            interactionOverlay.SetActive(false);
+            GlobalVar.instance.runtime.interactionOverlay.SetActive(false);
             currentSelected = null;
         } 
         else if (inRangeObjects.Count == 1)
         {
-            interactionOverlay.SetActive(true);
-            interactionOverlay.GetComponentInChildren<Text>().text = inRangeObjects[0].overlayText;
+            GlobalVar.instance.runtime.interactionOverlay.SetActive(true);
+            GlobalVar.instance.runtime.interactionOverlay.GetComponentInChildren<Text>().text = inRangeObjects[0].overlayText;
             currentSelected = inRangeObjects[0];
         } 
         else
@@ -50,8 +77,8 @@ public class InteractionManager : MonoBehaviour {
                     z = i;
                 }
             }
-            interactionOverlay.SetActive(true);
-            interactionOverlay.GetComponentInChildren<Text>().text = inRangeObjects[z].overlayText;
+            GlobalVar.instance.runtime.interactionOverlay.SetActive(true);
+            GlobalVar.instance.runtime.interactionOverlay.GetComponentInChildren<Text>().text = inRangeObjects[z].overlayText;
             currentSelected = inRangeObjects[z];
 
         }

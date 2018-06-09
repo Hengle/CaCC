@@ -5,7 +5,6 @@ using UnityEngine;
 public class Interactable : MonoBehaviour {
 
     public float range;
-    public Transform player;
     public string overlayText = "[E] Interact";
 
     [HideInInspector]
@@ -14,6 +13,16 @@ public class Interactable : MonoBehaviour {
     public bool _inRange = false;
 
     private float timer = 0f;
+
+    private void OnEnable()
+    {
+        InteractionManager.instance.AddToInteractables(this);
+    }
+
+    void OnDisable()
+    {
+        InteractionManager.instance.RemoveFromInteractables(this);
+    }
 
     public virtual void Interact ()
     {
@@ -24,7 +33,7 @@ public class Interactable : MonoBehaviour {
     {
         timer += Time.deltaTime;
 
-        distance = Vector3.Distance(player.position, transform.position);
+        distance = Vector3.Distance(GlobalVar.instance.runtime.player.transform.position, transform.position);
         if (distance <= range)
         {
             timer = 0;
