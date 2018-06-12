@@ -57,7 +57,7 @@ public class DialogueDisplay : MonoBehaviour {
     private void EndDialogue()
     {
         holder.SetActive(false);
-        ManagerScripts.instance.timeManager.ChangeGameState(TimeManager.GameTimeState.Moving);
+        //ManagerScripts.instance.timeManager.ChangeGameState(TimeManager.GameTimeState.Moving);
         Debug.Log("Conversation has ended");
     }
 }

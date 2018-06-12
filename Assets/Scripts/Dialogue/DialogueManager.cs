@@ -15,11 +15,11 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartSequenceFromXML (TextAsset xmlDialogue)
     {
-        ManagerScripts.instance.timeManager.ChangeGameState(TimeManager.GameTimeState.Talking);
+        //ManagerScripts.instance.timeManager.ChangeGameState(TimeManager.GameTimeState.Talking);
         // Send XML through a parse and recieve a List<Dialogue> back
         List<Dialogue> sequence = DialogueSequence.Load(xmlDialogue.text).Dialogue;
 
         // Send the List<Dialogue> to DialogueDisplay
-        ManagerScripts.instance.dialogueDisplay.StartDialogueSequence(sequence);
+        //ManagerScripts.instance.dialogueDisplay.StartDialogueSequence(sequence);
     }
 }

@@ -9,6 +9,6 @@ public class DialogueTrigger : MonoBehaviour {
     public void TriggerDialogue()
     {
         Debug.Log("Trigger Dialogue");
-        ManagerScripts.instance.dialogueManager.StartSequenceFromXML(xml);
+        //ManagerScripts.instance.dialogueManager.StartSequenceFromXML(xml);
     }
 }

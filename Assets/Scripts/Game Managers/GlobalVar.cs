@@ -62,4 +62,5 @@ public class RuntimeVars
 {
     public GameObject interactionOverlay;
     public GameObject player;
+    public GameObject pauseOverlay;
 }
